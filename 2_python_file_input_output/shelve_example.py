@@ -4,7 +4,7 @@ def main():
     print()
 
 
-    # cannot shelve a dictionary
+    # # cannot shelve a dictionary
 
     # with shelve.open('ShelfTest') as fruit:
     #     fruit = {
@@ -32,22 +32,21 @@ def main():
     #     fruit['grape'] = "a small, sweet fruit growing in bunches"
     #     fruit['lime'] = "a sour, green citrus fruit"
 
+    #     print(fruit["lemon"])
+    #     print(fruit["grape"])
 
-    # print(fruit["lemon"])
-    # print(fruit["grape"])
+    #     fruit["Lime"] = "great with tequila"
+        
 
-    # fruit["Lime"] = "great with tequila"
-    
-
-    # for snack in fruit:
-    #     print(snack + ": " + fruit[snack])
+    #     for snack in fruit:
+    #         print(snack + ": " + fruit[snack])
 
     # print(fruit)
 
 
 #____________________________________________________________________________
 
-    # closing the file manually
+    # # closing the file manually
 
     # fruit = shelve.open('ShelveTest')
     # fruit['orange'] = "a sweet citrus fruit"
@@ -81,17 +80,18 @@ def main():
 
     # looping through the dictionary 
 
-    while True:
-        dict_key = input("Please enter a fruit: ")
-        if dict_key == "quit":
-            print("quiting program")
-            break
+    # while True:
+    #     dict_key = input("Please enter a fruit: ")
+    #     if dict_key == "quit":
+    #         print("quiting program")
+    #         break
 
-        if dict_key in fruit:
-            description = fruit[dict_key]
-            print(description)
-        else:
-            print(f"We dont have a {dict_key}")
+    #     if dict_key in fruit:
+    #         description = fruit[dict_key]
+    #         print(description)
+    #     else:
+    #         print(f"{dict_key} is not in the dict")
+
 
 # _____________________________________________________________________
 
@@ -110,18 +110,18 @@ def main():
 
     # grabbing the items and values: similar to keys and values in dictionaries
 
-    # for v in fruit.values():
-    #     print(v)
+    for v in fruit.values():
+        print(v)
 
-    # print(fruit.values())
+    print(fruit.values())
 
-    # for f in fruit.items():
-    #     print(f)
+    for f in fruit.items():
+        print(f)
 
-    # print(fruit.items())
+    print(fruit.items())
 
 
-    # fruit.close()
+    fruit.close()
 
 
 
