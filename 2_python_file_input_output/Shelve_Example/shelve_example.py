@@ -19,30 +19,9 @@ def main():
     # print(fruit["lemon"])
     # print(fruit["grape"])
 
-    # print(fruit)
-
-#____________________________________________________________________________
-
-    # file closes on its own 
-
-    # with shelve.open('ShelfTest') as fruit:
-    #     fruit['orange'] = "a sweet citrus fruit"
-    #     fruit['apple'] = "good for making cider"
-    #     fruit['lemon'] = "a sour, yellow citrus fruit"
-    #     fruit['grape'] = "a small, sweet fruit growing in bunches"
-    #     fruit['lime'] = "a sour, green citrus fruit"
-
-    #     print(fruit["lemon"])
-    #     print(fruit["grape"])
-
-    #     fruit["Lime"] = "great with tequila"
-        
-
-    #     for snack in fruit:
-    #         print(snack + ": " + fruit[snack])
-
-    # print(fruit)
-
+    # print()
+    # print(fruit.keys())
+    # print(fruit.values())
 
 #____________________________________________________________________________
 
@@ -68,6 +47,28 @@ def main():
 
     # print(fruit)
 
+#____________________________________________________________________________
+
+    # # file closes on its own 
+
+    # with shelve.open('ShelfTest') as fruit:
+    #     fruit['orange'] = "a sweet citrus fruit"
+    #     fruit['apple'] = "good for making cider"
+    #     fruit['lemon'] = "a sour, yellow citrus fruit"
+    #     fruit['grape'] = "a small, sweet fruit growing in bunches"
+    #     fruit['lime'] = "a sour, green citrus fruit"
+
+    #     print(fruit["lemon"])
+    #     print(fruit["grape"])
+
+    #     fruit["Lime"] = "great with tequila"
+        
+
+    #     for snack in fruit:
+    #         print(snack + ": " + fruit[snack])
+
+    # print(fruit)
+
 #____________________________________________________________________
 
 
@@ -80,35 +81,40 @@ def main():
 
     # looping through the dictionary 
 
-    # while True:
-    #     dict_key = input("Please enter a fruit: ")
-    #     if dict_key == "quit":
-    #         print("quiting program")
-    #         break
-
-    #     if dict_key in fruit:
-    #         description = fruit[dict_key]
-    #         print(description)
-    #     else:
-    #         print(f"{dict_key} is not in the dict")
+    while True:
+        dict_key = input("Please enter a fruit: ")
+        if dict_key == "q":
+            print("quiting program")
+            break
+        
+        # description = fruit.get(dict_key, "We don't have a " + dict_key)
+        # print(description)
+        
+        if dict_key in fruit:
+            description = fruit[dict_key]
+            print(description)
+        else:
+            print(f"{dict_key} is not in the dict")
 
 
 # _____________________________________________________________________
 
 
-    # # ordering the dictionary by name
+    # ordering the dictionary by name
     
-    # order_keys = list(fruit.keys())
-    # order_keys.sort()
+    order_keys = list(fruit.keys())
+    order_keys.sort()
 
-    # # for f in fruit:
-    # for f in order_keys:
-    #     print(f + f" - {fruit[f]}")
+    # for f in fruit:
+    for f in order_keys:
+        print(f + f" - {fruit[f]}")
 
 
 # _____________________________________________________________________
 
     # grabbing the items and values: similar to keys and values in dictionaries
+
+    print()
 
     for v in fruit.values():
         print(v)
@@ -121,12 +127,8 @@ def main():
     print(fruit.items())
 
 
+    # # important to close file at the bottom 
     fruit.close()
-
-
-
-
-
 
 
 if __name__ == "__main__":

@@ -36,7 +36,5 @@ def main():
         print(bike["color"])
 
 
-
-
 if __name__ == "__main__":
     main()

@@ -48,6 +48,9 @@ def main():
  
     
     vocabulary.close()
+
+
+    print("Game Created!")
     
 if __name__ == "__main__":
     main()

@@ -1,14 +1,10 @@
-
-
-
-
 from pickle import DEFAULT_PROTOCOL
 
 
 def main():
     print()
 
-    file = '\\Users\\User\Desktop\\Python_Udemy\\file_input_output\\binary'
+    file = '\\Users\\User\\Desktop\\Python_Udemy\\2_python_file_input_output\\binary_data\\binary'
 
 
     # with open("binary", 'bw') as bin_file:
@@ -23,7 +19,7 @@ def main():
 
 #____________________________________________________________________
 
-    file = '\\Users\\User\Desktop\\Python_Udemy\\file_input_output\\binary2'
+    file = '\\Users\\User\\Desktop\\Python_Udemy\\2_python_file_input_output\\binary_data\\binary2'
 
     # a = 65534   # FF FE
     # b = 65535   # FF FF
@@ -55,18 +51,18 @@ def main():
 
     import pickle
 
-    file = '\\Users\\User\Desktop\\Python_Udemy\\file_input_output\\imelda.pickle'
+    file = '\\Users\\User\\Desktop\\Python_Udemy\\2_python_file_input_output\\binary_data\\imelda.pickle'
 
-    imelda = ('More Mayhem',
-                'Imelda May',
-                '2011',
-                ((1, 'Pulling the Rug'),
-                (2, 'Psycho'),
-                (3, 'Mayhem'),
-                (4, 'Kentish Town Waltz')))
+    # imelda = ('More Mayhem',
+    #             'Imelda May',
+    #             '2011',
+    #             ((1, 'Pulling the Rug'),
+    #             (2, 'Psycho'),
+    #             (3, 'Mayhem'),
+    #             (4, 'Kentish Town Waltz')))
 
-    with open(file, "wb") as pickle_file:
-        pickle.dump(imelda, pickle_file)
+    # with open(file, "wb") as pickle_file:
+    #     pickle.dump(imelda, pickle_file)
 
 #____________________________________________________________________
 
@@ -99,12 +95,14 @@ def main():
     even = list(range(0, 10, 2))
     odd = list(range(1, 11, 2))
 
+    # writting to a binary file
     with open(file, "wb") as pickle_file:
         pickle.dump(imelda, pickle_file, protocol=pickle.HIGHEST_PROTOCOL)
         pickle.dump(even, pickle_file, protocol=0)
         pickle.dump(odd, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
         pickle.dump(2999302, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
 
+    # reading from the binar file
     with open(file, "rb") as imelda_pickled:
         imelda2 = pickle.load(imelda_pickled)
         even_list = pickle.load(imelda_pickled)
@@ -118,6 +116,8 @@ def main():
     print(album)
     print(artist)
     print(year)
+
+    # prints everything in list
     for track in track_list:
         track_number, track_title = track
         print(track_number, track_title)
@@ -137,7 +137,8 @@ def main():
 
 #____________________________________________________________________
 
-    pickle.loads(b"cos\nsystem\n(S'del imelda.pickle'\ntR.")
+    # deletes the binary file
+    # pickle.loads(b"cos\nsystem\n(S'del imelda.pickle'\ntR.")
 
 
 

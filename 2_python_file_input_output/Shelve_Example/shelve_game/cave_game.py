@@ -1,5 +1,9 @@
 import shelve
 
+# in order for this code to run "cave_initialized.py" must be run first
+# "cave_game.py" will use code from "cave_initialized.py" dictionary in order
+# to be ran
+
 
 def main():
     print()
@@ -20,7 +24,7 @@ def main():
             allExits = locations[loc]["exits"].copy()
             allExits.update(locations[loc]["namedExits"])
     
-        direction = input(f"Available exits are {availableExits}" ).upper()
+        direction = input(f"Available exits are {availableExits}").upper()
         print()
     
         # Parse the user input, using our vocabulary dictionary if necessary
